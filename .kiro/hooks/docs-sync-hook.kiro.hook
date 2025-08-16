@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "name": "Documentation Sync",
+  "description": "Listens to TypeScript source files and configuration changes to automatically update project documentation in README.md",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "package.json",
+      "tsconfig.json",
+      "vite.config.ts",
+      "vitest.config.ts",
+      "tailwind.config.js",
+      "eslint.config.js",
+      "postcss.config.js"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Source code or configuration files have been modified. Please review the changes and update the README.md file to reflect any new features, API changes, configuration updates, or architectural modifications. Ensure the documentation accurately represents the current state of the codebase including setup instructions, usage examples, and any new dependencies or build processes."
+  }
+}
